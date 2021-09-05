@@ -12,7 +12,6 @@ namespace Modul4HW4
         private AppConfigService _config = new AppConfigService();
         public void Run()
         {
-            Console.WriteLine(_config.ConnectionString);
         }
     }
 }
