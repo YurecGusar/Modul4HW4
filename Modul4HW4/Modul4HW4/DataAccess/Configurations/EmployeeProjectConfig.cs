@@ -27,6 +27,54 @@ namespace Modul4HW4.DataAccess.Configurations
                 .HasForeignKey(r => r.ProjectId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
+
+            builder.HasData(new List<EmployeeProject>()
+            {
+                new EmployeeProject
+                {
+                    EmployeeProjectId = 1,
+                    StartedDate = new DateTime(2021, 1, 1),
+                    ProjectId = 1,
+                    EmployeeId = 1,
+                    Rate = 557,
+                },
+
+                new EmployeeProject
+                {
+                    EmployeeProjectId = 2,
+                    StartedDate = new DateTime(2021, 1, 1),
+                    ProjectId = 2,
+                    EmployeeId = 2,
+                    Rate = 557,
+                },
+
+                new EmployeeProject
+                {
+                    EmployeeProjectId = 3,
+                    StartedDate = new DateTime(2021, 1, 1),
+                    ProjectId = 3,
+                    EmployeeId = 3,
+                    Rate = 100,
+                },
+
+                new EmployeeProject
+                {
+                    EmployeeProjectId = 4,
+                    StartedDate = new DateTime(2021, 1, 1),
+                    ProjectId = 4,
+                    EmployeeId = 4,
+                    Rate = 100,
+                },
+
+                new EmployeeProject
+                {
+                    EmployeeProjectId = 5,
+                    StartedDate = new DateTime(2021, 1, 1),
+                    ProjectId = 5,
+                    EmployeeId = 5,
+                    Rate = 557,
+                }
+            });
         }
     }
 }

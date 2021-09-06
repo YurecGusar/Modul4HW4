@@ -20,6 +20,8 @@ namespace Modul4HW4
             using (var db = new ApplicationContext(options.Options))
             {
             }
+
+            Console.WriteLine("Done");
         }
     }
 }

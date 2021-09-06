@@ -16,6 +16,39 @@ namespace Modul4HW4.DataAccess.Configurations
             builder.HasKey(a => a.TitleId);
             builder.Property(a => a.TitleId).HasColumnName("TitleId").IsRequired().ValueGeneratedOnAdd();
             builder.Property(b => b.Name).HasColumnName("Name").IsRequired().HasColumnType("nvarchar").HasMaxLength(50);
+
+            builder.HasData(new List<Title>()
+            {
+                new Title()
+                {
+                    TitleId = 1,
+                    Name = "qwerty"
+                },
+
+                new Title()
+                {
+                    TitleId = 2,
+                    Name = "fdsgrs"
+                },
+
+                new Title()
+                {
+                    TitleId = 3,
+                    Name = "fdgkjjgf"
+                },
+
+                new Title()
+                {
+                    TitleId = 4,
+                    Name = "asdfg"
+                },
+
+                new Title()
+                {
+                    TitleId = 5,
+                    Name = "zxcvbn"
+                }
+            });
         }
     }
 }
