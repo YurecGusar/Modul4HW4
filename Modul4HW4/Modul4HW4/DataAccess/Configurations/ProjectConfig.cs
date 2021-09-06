@@ -18,6 +18,11 @@ namespace Modul4HW4.DataAccess.Configurations
             builder.Property(b => b.Name).HasColumnType("nvarchar").HasColumnName("Name").IsRequired();
             builder.Property(c => c.Budget).HasColumnType("money").IsRequired();
             builder.Property(d => d.StartedTime).HasColumnType("datetime2").IsRequired().HasMaxLength(7);
+            builder.HasOne(e => e.Client)
+                .WithMany(e => e.Projects)
+                .HasForeignKey(e => e.ClientId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();
         }
     }
 }

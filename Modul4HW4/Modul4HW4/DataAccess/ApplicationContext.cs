@@ -9,9 +9,9 @@ using Modul4HW4.Models;
 
 namespace Modul4HW4.DataAccess
 {
-    public class AppContext : DbContext
+    public class ApplicationContext : DbContext
     {
-        public AppContext(DbContextOptions<AppContext> db)
+        public ApplicationContext(DbContextOptions<ApplicationContext> db)
             : base(db)
         {
         }
@@ -21,6 +21,7 @@ namespace Modul4HW4.DataAccess
         public DbSet<Office> Offices { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Title> Titles { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +30,7 @@ namespace Modul4HW4.DataAccess
             modelBuilder.ApplyConfiguration(new OfficeConfig());
             modelBuilder.ApplyConfiguration(new ProjectConfig());
             modelBuilder.ApplyConfiguration(new TitleConfig());
+            modelBuilder.ApplyConfiguration(new ClientConfig());
         }
     }
 }

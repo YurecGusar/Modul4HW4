@@ -16,7 +16,7 @@ namespace Modul4HW4.Models
 
         public DateTime HiredData { get; set; }
 
-        public DateTime DataOfBirth { get; set; }
+        public DateTime? DataOfBirth { get; set; }
 
         public int OfficeId { get; set; }
         public Office Office { get; set; }

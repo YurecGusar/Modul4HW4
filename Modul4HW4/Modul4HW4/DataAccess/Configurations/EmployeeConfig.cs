@@ -22,11 +22,13 @@ namespace Modul4HW4.DataAccess.Configurations
             builder.HasOne(f => f.Office)
                 .WithMany(f => f.Employes)
                 .HasForeignKey(f => f.OfficeId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();
             builder.HasOne(g => g.Title)
                 .WithMany(g => g.Employes)
                 .HasForeignKey(g => g.TitleId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();
         }
     }
 }

@@ -20,11 +20,13 @@ namespace Modul4HW4.DataAccess.Configurations
             builder.HasOne(d => d.Employee)
                 .WithMany(q => q.EmployeeProjects)
                 .HasForeignKey(z => z.EmployeeId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();
             builder.HasOne(q => q.Project)
                 .WithMany(z => z.EmployeeProjects)
                 .HasForeignKey(r => r.ProjectId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();
         }
     }
 }
